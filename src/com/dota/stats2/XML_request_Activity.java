@@ -14,17 +14,18 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.TextView;
 
-public class XMLRequest extends Activity {
-	
-    protected void onCreate(Bundle savedInstanceState) {
-    	XMLRequest("https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?matches_requested=1&key=A5CAA39E3791232352A7B101B89F6D0C&format=XML");
-    }
-
-    private void XMLRequest(String uri){
-        try {
+public class XML_request_Activity extends Activity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_xml_request_);
+		try {
+        	String uri="https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?matches_requested=1&key=A5CAA39E3791232352A7B101B89F6D0C&format=XML";
 			URL url = new URL(uri);
 			HttpURLConnection connection =(HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
@@ -35,8 +36,11 @@ public class XMLRequest extends Activity {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document doc = db.parse(xml);
-			doc.getElementsByTagName("match_id");
-
+			String str=doc.getElementById("matchId").getTextContent();
+			
+			t=new TextView(this);
+			
+			t=(TextView)findViewById(R.id.hello_world);
 			
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -54,5 +58,13 @@ public class XMLRequest extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.xml_request_, menu);
+		return true;
+	}
+
 }

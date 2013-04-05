@@ -3,6 +3,7 @@
 
     <string name="app_name">stats2</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Fuck you!</string>
+    <string name="title_activity_xml_request_">XML_request_Activity</string>
 
 </resources>
