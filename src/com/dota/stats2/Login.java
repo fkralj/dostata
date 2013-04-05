@@ -3,7 +3,7 @@ package com.dota.stats2;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-
+//FILIP JE *****
 public class Login extends Activity {
 
     @Override
