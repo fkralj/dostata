@@ -15,15 +15,16 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.dota.stats2.Login"
-            android:label="@string/app_name" >            
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.dota.stats2.XML_request_Activity"
             android:label="@string/title_activity_xml_request_" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

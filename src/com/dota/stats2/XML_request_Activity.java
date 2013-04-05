@@ -38,9 +38,9 @@ public class XML_request_Activity extends Activity {
 			Document doc = db.parse(xml);
 			String str=doc.getElementById("matchId").getTextContent();
 			
-			t=new TextView(this);
-			
-			t=(TextView)findViewById(R.id.hello_world);
+//			t=new TextView(this);
+//			
+//			t=(TextView)findViewById(R.id.hello_world);
 			
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
